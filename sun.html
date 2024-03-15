@@ -5,6 +5,7 @@
         <style>
             h5{
                 color: yellowgreen;
+        
             }
             body{
                 margin: 0;
@@ -34,33 +35,60 @@
             .earth{
                 position: absolute;
                 border-style: solid;
-                border-color: blue transparent transparent transparent;
+                box-shadow: 0 0 3em rgba(255, 255, 255, 0.192);
                 border-width: 0.1em 0.1em 0em;
                 border-radius: 50%;
                 top: 5em;
                 left: 5em;
                 width: 30em;
                 height: 30em;
-                animation: orbit 36.5s linear infinite;
-                
-               
+                animation: orbit 36.5s linear infinite;  
+                       
+            }
+            .merc{
+                position: absolute;
+                border-style: solid;
+                border-width: 0.35em 0.2em 6em;
+                border-radius: 50%;
+                top: 3em;
+                left: 3em;
+                width: 35em;
+                height: 39em;
+                animation: orbit 56.5s linear infinite;
+                box-shadow: 0 0 3em rgba(255, 255, 255, 0.192);
+
+
             }
             .moon{
                 position: absolute;
-                border-style: solid;
-                border-color: silver transparent transparent transparent;
-                border-width: 0.1em 0.1em 0em;
+               
+                border-width: 0.2em 0.1em 0em;
                 border-radius: 50%;
                 top: 0;
                 right: 0;
                 width: 8em;
                 height: 8em;
-                animation: orbit 2.7s linear infinite;
+                animation: orbit 21.7s linear infinite;
+                box-shadow: 0 0 1em rgba(255, 255, 255, 0.192);               
+            }
+
+            .mn{
+                position: absolute;
                 
+                border-width: 0.1em 0.1em 0em;
+                border-radius: 50%;
+                top: 0;
+                right: 0;
+                width: 10em;
+                height: 9em;
+                animation: orbit 47.7s linear infinite;
+                              
             }
 
             .earth::before,
-            .moon::before{
+            .moon::before,
+            .merc::before,
+            .mn::before{
                 content: '';
                 position: absolute;
                 border-radius: 50%;
@@ -83,6 +111,22 @@
                 background-color: silver;
             }
 
+            .merc::before{
+                right: 3.8em;
+                top:3.8em;
+                width: 4em;
+                height: 4em;
+                background-color: bisque;
+            }
+
+            .mn::before{
+                right: 0.2em;
+                top: 0.8em;
+                width: 1.2em;
+                height: 1.2em;
+                background-color: silver;
+            }
+
             
 
             @keyframes orbit{
@@ -90,6 +134,7 @@
                    transform: rotate(360deg); 
                 }
             }
+            
 
         </style>
 
@@ -97,7 +142,9 @@
     <body>
         <div class="cont">
             <div class="sun"></div>
-            <div class="mercure"></div>
+            <div class="merc">
+                <div class="mn"></div>               
+            </div>
             <div class="earth">
                 <div class="moon"></div>
             </div>
